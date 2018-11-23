@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加页面</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/icon.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/home/css/tsh.easyui.extent.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+</head>
+<body style="margin:0 5px;">
+	<div id="tsh-title">
+		<h3>
+			<span class="t1">用户</span>
+			<span class="t2">基础信息</span>
+		</h3>
+		<div class="title-border"></div>
+	</div>
+	<form method="post">
+		<div class="form">
+			<table>
+				<tr >
+					<td style="text-align: right" >
+						<span class="text-red">*</span>主题名称：
+					</td>
+					<td>
+						<input class="easyui-textbox"
+								style="width: 270px; height: 30px;" type="text" name="themeName"
+								prompt="主题名称"
+								missingMessage="请填写主题名称" 
+								data-options="required:true,validateOnBlur:true,validateOnCreate:false,err:err">（不超过20个文字）
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right">
+						<span class="text-red">*</span>主题类型：
+					</td>
+					<td>
+						<input class="easyui-combobox"  prompt="主题类型" style="width: 150px; height: 30px;" data-options="panelHeight:'auto',editable: false,data:[{text:'aaa',id:'java'},{text:'sss',id:'2'}]"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right">
+						<span class="text-red">*</span>主题封面：
+					</td>
+					<td>
+						<img alt="暂无图片" id="thumbnail1" height="70"
+							src="../../static/home/images/nopic.png"
+							style="float: left; display: inline-block; margin-right: 6px" />
+						<div class="filePicker readonly-hidden"
+							style="padding-top: 20px; line-height: 32px; float: left; padding-right: 16px;">上传图片</div>
+						<div style="line-height: 70px; width: 700px;white-space:nowrap;" >建议图片尺寸1028*273，图片大小不超过2M，支持jpg、png格式</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right">
+						<span class="text-red">*</span>活动时间：
+					</td>
+					<td>
+						<input class="easyui-datetimebox readyonly" name="startTime" 
+						data-options="delay:500,validateOnCreate:false,validateOnBlur:true,required:true,err:err,editable:false,showSeconds:false"
+						style="width: 150px; height: 30px;"/>
+						到 
+						<input
+						class="easyui-datetimebox readyonly" name="endTime" id="endTime" 
+						data-options="delay:500,validateOnCreate:false,validateOnBlur:true,required:false,err:err,editable:false,showSeconds:false"
+						style="width: 150px; height: 30px;"/>
+						（普通主题结束时间可不填写，不填写默认为长期进行）
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: right">
+						<span class="text-red">*</span>适用范围：
+					</td>
+					<td>
+						<input type="radio" class="radio readyonly"
+                           	name="scopeType" checked="checked" value="1">
+                           <label for="scopeType-radio-1">全部县域</label>
+                           <input id="scopeType-radio-2" type="radio" class="radio readyonly" name="scopeType" value="2">
+                           <label for="scopeType-radio-2">全部网点</label>
+                           <input id="scopeType-radio-3" type="radio" class="radio readyonly" name="scopeType" value="3">
+                           <label for="scopeType-radio-3">指定县域</label> 
+                           <input id="scopeType-radio-4" type="radio" class="radio readyonly" name="scopeType" value="4">
+                           <label for="scopeType-radio-4">指定网点</label> 
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div style="margin-top: 30px;margin-bottom: 30px; padding-left: 20px;" >
+			<a href="javascript:void(0)" class="btn btn-1 readonly-hidden" id="saveBtn" ><i class="i-ok"></i>保存</a>
+			<a href="javascript:void(0)" class="btn" id="baseSettingBackBtn"><i class="i-close"></i>取消</a>
+		</div>
+	</form>
+	
+</body>
+<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../static/js/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../static/home/js/tsh.easyui.extent.js"></script>
+</html>

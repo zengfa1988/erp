@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ERP管理系统</title>
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Expires" CONTENT="0"> 
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="static/js/easyui/themes/default/easyui.css" />
+	<link type="text/css" rel="stylesheet" href="static/js/easyui/themes/icon.css" />
+	<link type="text/css" rel="stylesheet" href="static/home/css/tsh.easyui.extent.css" />
+	<link type="text/css" rel="stylesheet" href="static/home/css/home.css" />
+</head>
+<body>
+	<div id="container">
+		<!-- 侧边栏开始 -->
+		<div id="sidebar">
+			<div id="logo"><span>管理系统</span></div>
+			<div id="userInfo">
+				<table>
+					<tr>
+						<td class="td1"></td>
+						<td  class="td2">
+							<span id="userName" style="word-break: break-all;white-space: pre-wrap;">admin</span>
+							<a class="logout J_Logout"  href="usercentre/outLogin.do">退出</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- 菜单开始 -->
+			<div id="menu" class="addTab">
+				
+			</div>
+			<!-- 菜单结束 -->
+		</div>
+		<!-- 侧边栏结束 -->
+		
+		<!-- 主体开始 -->
+		<div id="wrapper">
+			<div id="main">
+				<div id="header-right">
+				</div>
+				<div id="tabs" class="easyui-tabs" fit="true" border="false">
+					<div title="首页" style="padding-bottom: 30px">
+						<div id="welcome_auc" style="margin:10px; font-size:18px; height:100%;overflow:auto;padding-bottom: 30px">欢迎</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 主体结束 -->
+	</div>
+	
+	<div id="mm" class="easyui-menu cs-tab-menu">
+        <div id="mm-tabupdate">刷新</div>
+        <div class="menu-sep"></div>
+        <div id="mm-tabclose">关闭</div>
+        <div id="mm-tabcloseother">关闭其他</div>
+        <div id="mm-tabcloseall">关闭全部</div>
+    </div>
+</body>
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="static/js/commonfuncode.js"></script>
+<script type="text/javascript" src="static/home/js/home.js"></script>
+</html>

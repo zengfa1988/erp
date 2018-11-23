@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>添加物流进度</title>
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+   	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+    <script src="../../static/js/jquery.easyui.extend.min.js"></script>
+   	<script src="../../static/js/webuploader-0.1.5/webuploader.nolog.min.js"></script>
+   	<script src="../../static/js/commom.js"></script>
+   	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+   	<script src="../../../static/common/easyui.common.js?gversion=1.0.0"></script>
+</head>
+<body>
+	<style type="text/css">
+  .eps_table {
+				width: 500px;
+				border: 1px solid #dee3e6;
+				border-collapse: collapse;
+				text-align: center;
+				margin: 15px auto;
+			}
+	.eps_table tr td,th {
+		border: 1px solid #dee3e6;
+		padding: 5px;
+	}
+</style>
+    <div>
+    	<table class="eps_table" id="progressTable">
+    		<tr>
+    			<th>时间</th>
+    			<th>内容</th>
+    		</tr>
+    	</table>
+    </div>
+    <div id="tsh-title">
+    	<h3><span class="t1">添加物流进度</span></h3>
+    	<div class="title-border"></div>
+     	</div>
+    <form id="addForm" method="post" class="form">
+    	<input type="hidden" name="transId" id="transId">
+        <table style="width: 98%;">
+   			<tr>
+   				<td style="text-align:right"><span>时间</span>：</td>
+   				<td>
+   					<input class="easyui-datetimebox" id="progressTime" name="progressTime" style="width:150px; height:30px;" data-options="editable:false"></input>
+   				</td>
+   			</tr>
+   			<tr>
+   				<td style="text-align:right">进度内容：</td>
+   				<td>
+   					<input class="easyui-textbox" id="content" name="content" data-options="multiline:true" style="width:500px; height:80px;"></input>
+   				</td>
+   			</tr>
+            <tr>
+   				<td colspan="4" align="center">
+   					<a href="javascript:save();" class="btn btn-1">保存</a>
+   					<a href="javascript:void(0);" style="margin-left:20px" class="btn btn-default" onclick="closePick();">取消</a>
+   				</td>
+   			</tr>
+        </table>
+    </form>
+    <script src="progress.js"></script>
+</body>
+</html>

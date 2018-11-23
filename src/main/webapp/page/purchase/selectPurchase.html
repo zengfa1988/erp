@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <title>选择采购单</title>
+    <link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+   	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+	<script src="../../static/js/jquery.easyui.extend.min.js"></script>
+	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+</head>
+<body style="margin:0 20px;">
+	<div class="easyui-panel" data-options="fit:true" style="padding:4px;margin-top:10px;width:100%;padding-bottom:20px;">
+	<div id="pickGoodsSkuPageTb" >
+      <form class="tsh-toolbar" id="selectPurchaseForm">
+      	<label>
+   			<span>采购单号：</span>
+   			<input class="easyui-textbox" name="purchaseNo" style="width:170px; height:30px;" />
+   		</label>
+        <label><a href="javascript:searchForm();" class="btn btn-1" id="J_Search"><i class="i-search"></i>查询</a></label>
+        <label><a href="javascript:clearFormData();" class="btn">清空</a></label>
+      </form>
+	</div>
+  	<table id="selectDataGrid" style="height:370px;"></table>
+  	<div style="text-align: center;">
+    	<a href="javascript:bind();" class="btn btn-2"><i class="i-50"></i>确定</a>&emsp;
+        <a href="javascript:closePick();" class="btn"><i class="i-close"></i>取消</a>
+  	</div>
+    </div>
+  
+<style type="text/css">
+    	.datagrid-ul{padding:0px;margin:0px;list-style: none;width:100%;display:inline-block;}
+    	.datagrid-ul li[end='false']{border-bottom:1px solid #dee3e6;width:100%;height:30px;line-height: 25px;}
+    	.datagrid-ul li[end='true']{border-bottom:none;width:100%;height:30px;line-height: 30px;}
+    	td[field='skuId'] .datagrid-cell{padding:0px}
+    	td[field='skuMsg'] .datagrid-cell{padding:0px}
+    	td[field='stock'] .datagrid-cell{padding:0px}
+    	td[field='salePrice'] .datagrid-cell{padding:0px}
+    	input[type='checkbox']{width:18px;height:18px;}
+</style>
+<script src="../purchase/selectPurchase.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>修改采购</title>
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+   	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+	<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+    <script src="../../static/js/jquery.easyui.extend.min.js"></script>
+   	<script src="../../static/js/webuploader-0.1.5/webuploader.nolog.min.js"></script>
+   	<script src="../../static/js/commom.js"></script>
+   	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+   	<script src="../../../static/common/easyui.common.js?gversion=1.0.0"></script>
+	<script src="purchase_edit.js"></script>
+<style type="text/css">
+ .form td {
+            padding: 10px 0
+        }
+  #tsh-title .btn-4 {
+      position: absolute;
+      top: -5px;
+  }
+</style>
+</head>
+<body>
+ 	<div id="tsh-title">
+        	<h3>
+        		<span class="t1">采购详情</span>
+        	</h3>
+       		<div class="title-border"></div>
+     	</div>
+    <form id="addForm" method="post" class="form">
+    	<input type="hidden" name="id">
+        <table style="width: 98%;">
+            <tr>
+   				<td style="text-align:right"><span>采购单号</span>：</td>
+   				<td><span id="purchaseNo"></span></td>
+   				<td style="text-align:right">采购日期：</td>
+   				<td><span id="purchaseDate"></span></td>
+   			</tr>
+   			<tr>
+   				<td style="text-align:right">备注：</td>
+   				<td colspan="3">
+   					<input class="easyui-textbox" id="memo" name="memo" data-options="multiline:true,readonly:true" style="width:500px; height:80px;"></input>
+   				</td>
+   			</tr>
+   			<tr>
+   				<td colspan="4">
+   					<!-- <div style="padding-top: 5px;"><a id="selectGoods" class="btn" >选择sku</a></div> -->
+   					<table id="goodsGrid" class="easyui-datagrid" style="height: 350px;"></table>
+   				</td>
+   			</tr>
+            <tr>
+   				<td colspan="4" align="center">
+   					<a href="javascript:save();" class="btn btn-1">保存</a>
+   					<a href="javascript:void(0);" style="margin-left:20px" class="btn btn-default" onclick="window.history.back(0);">取消</a>
+   				</td>
+   			</tr>
+        </table>
+    </form>
+    <div id="dialog" style="display:none;"></div>
+</body>
+</html>

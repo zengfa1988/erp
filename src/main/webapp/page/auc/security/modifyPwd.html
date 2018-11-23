@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<title>修改密码</title>
+<link type="text/css" rel="stylesheet" href="../../../static/js/easyui/themes/default/easyui.css" />
+<link type="text/css" rel="stylesheet" href="../../../static/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../../static/security/css/modifyPwd.css">
+<script type="text/javascript" src="../../../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/js/easyui/jquery.easyui.min.js"></script>
+<script src="../../../static/js/jquery.easyui.extend.min.js"></script>
+<script src="../../../static/common/js/acceptParam/acceptParam.js"></script>
+<script src="../../../static/common/js/base64/base64.min.js"></script>
+<script src="../../../static/js/commonfuncode.js"></script>
+<script src="../../../static/security/js/modifyPwd.js"></script>
+</head>
+<body style="margin: 0 20px;">
+	<div id="tsh-title">
+		<h3><span class="t1" >修改密码</span>
+		</h3>
+		<div class="title-border"></div>
+	</div>
+	<form id="securityForm" method="post" class="form">
+
+		<div style="margin: 0px; padding: 10px 0; height: 50px;">
+			<div class="step_parent" index="1">
+				<div id="bg1" style="padding-top: 2px" class="bg step_sp_active">
+					<span>1</span>
+				</div>
+				<div class="xs" id="s1">
+					<span>修改密码</span>
+				</div>
+			</div>
+			<div class="step_parent" index="2">
+				<div id="bg2" class="bg" style="padding-top: 2px">
+					<span>2</span>
+				</div>
+				<div class="xs " id="s2">
+					<span>完成</span>
+				</div>
+			</div>
+
+		</div>
+
+		<div style="height: 50px;"></div>
+		<!--   第一步 -->
+
+		<!--   第二步 -->
+		<div id="div1" style="display: inline-block;">
+			<div style="margin-left: 180px; font-size: 12px">
+				<span>设置密码时请不要使用过于简单密码！</span>
+			</div>
+		
+			<div style="margin-top: 20px;">
+				<span class="title">新密码：</span> <span> <input class="dtds-input" style="width: 200px;" id="pwd" type="password" maxlength="20"/>
+				</span> <span id="pwd-ck"></span>
+			</div>
+			<div style="margin-top: 20px;">
+				<span class="title">确认新密码：</span> <span> <input class="dtds-input" style="width: 200px;" id="repwd" type="password"  maxlength="20" />
+				</span> <span id="repwd-ck"></span>
+			</div>
+			<div class="option-div">
+				<a href="javascript:void(0)" class="btn btn-1" id="setPwd" onclick="checkStep()">确定</a>
+			</div>
+		</div>
+		<!-- 	第三步 -->
+		<div id="div2" style="display: none;">
+			<div style="margin-left: 180px;margin-top:80px; font-size: 18px;">
+				<i class="icon-01" ></i><span>您的密码修改成功，请牢记您设置的密码！<a href="javascript:void(0)" onclick="outLogin()" class="ftx-05">返回账号登录</a></span>
+			</div>
+			
+		</div>
+
+		
+
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户列表</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/icon.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/home/css/tsh.easyui.extent.css" />
+	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+</head>
+<body style="margin:0 20px;">
+	<div id="tb">
+		<div id="tsh-title">
+			<h3>
+				<span class="t1">用户管理</span>
+				<span class="t2">系统</span>
+			</h3>
+			<div class="title-border"></div>
+		</div>
+		<form class="tsh-toolbar">
+			<label style="display: none;">
+				<span>主题类型：</span>
+				<input class="easyui-combobox" prompt="选择主题类型" style="width: 100px; height: 30px;" name="themeType" id="themeType" />
+			</label> 
+			<label id="createType-dom">
+				<span>创建渠道：</span>
+				<input class="easyui-combobox" prompt="输入可过滤" style="width: 150px; height: 30px;" name="createType" id="createType" />
+			</label> 
+			<label style="display: none;" id="status-dom">
+				<span>状态：</span>
+				<input class="easyui-combobox" prompt="选择状态" style="width: 100px; height: 30px;" name="status" id="status" /></label> 
+			<label id="startTime-dom">
+				<span>活动时间：</span>
+				<input class="easyui-datebox" name="startTime" id="startTime" editable="false" style="width: 95px; height: 30px;">&nbsp;到 
+			</label> 
+			<label id="endTime-dom"> 
+				<input class="easyui-datebox" name="endTime" id="endTime" editable="false" style="width: 95px; height: 30px;">
+			</label> 
+			<label id="themeName-dom">
+				<input class="easyui-textbox" name="themeName" style="width: 170px; height: 30px;" prompt="请输入主题名称" /></label> 
+			<label>
+				<a href="javascript:;" class="btn btn-1" id="J_Search"><i class="i-search"></i>查询</a>
+			</label> 
+			<label><a href="javascript:;" class="btn" id="clear_query">清空</a></label>
+		</form>
+		<div class="tsh-toolbar" style="margin-bottom: -2px;">
+			<label>
+				<a href="add.html" class="btn btn-2" id="add-btn"><i class="i-add"></i>新增</a>
+			</label>
+			<span style="color: red;">未开始或进行中的主题点击"主题名称"，"主题屏端排序"可进行修改</span>
+		</div>
+	</div>
+	
+	<table id="dataGrid" class="easyui-datagrid" ></table>
+	
+	
+</body>
+<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../static/js/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../static/home/js/tsh.easyui.extent.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+</html>

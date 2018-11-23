@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+		<title>供应商列表</title>
+		<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+    	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+		<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+	    <script src="../../static/js/jquery.easyui.extend.min.js"></script>
+	  	<script src="../../static/js/commom.js"></script>
+	  	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+	    <script src="category_list.js"></script>
+	    <style type="text/css">
+			form td {
+				padding: 10px 0
+			}    
+	    </style>
+	</head>
+	<body style="margin:0 20px">
+		<div id="tb">
+			<div id="tsh-title">
+				<h3><span class="t1">品类列表</span></h3>
+				<div class="title-border"></div>
+			</div>
+			
+			<form class="tsh-toolbar" id="supplierForm">
+				<label style="min-width:80px;">
+					<a class="btn btn-2" id="addCategory"><i class="i-add"></i>添加</a>
+				</label>
+				<!-- <label><a href='javascript:;' id="import-btn">导入</a></label> -->
+			</form>
+		</div>
+		<table id="grid" class="easyui-datagrid"></table>
+		<div id="addDialog" style="display: none;">
+			<form id="addForm">
+				<input type="hidden" name="id">
+				<table style="width: 98%;">
+					<tr>
+	     				<td style="text-align:right"><span class="text-red">∗</span><span>品类名称</span>：</td>
+	     				<td>
+	     					<input class="easyui-textbox" id="categoryName" name="categoryName" data-options="required:true" style="width:200px; height:30px;"></input>
+	     				</td>
+	     			</tr>
+	     			<tr>
+	     				<td style="text-align:right">备注：</td>
+	     				<td>
+	     					<input class="easyui-textbox" id="memo" name="memo" data-options="multiline:true" style="width:200px; height:50px;"></input>
+	     				</td>
+	     			</tr>
+	     			<tr>
+	     				<td colspan="2" align="center">
+	     					<a href="javascript:saveCategory();" class="btn btn-1">保存</a>
+	     					<a href="javascript:void(0);" style="margin-left:20px" class="btn btn-default" onclick="closeAddDialog();">取消</a>
+	     				</td>
+	     			</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

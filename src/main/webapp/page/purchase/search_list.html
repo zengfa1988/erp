@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+		<title>采购单查询列表</title>
+		<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+    	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+		<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+	    <script src="../../static/js/jquery.easyui.extend.min.js"></script>
+	    <script src="../../static/js/webuploader-0.1.5/webuploader.nolog.min.js"></script>
+	  	<script src="../../static/js/commom.js"></script>
+	  	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+	    <script src="../../static/js/fileUpload.js"></script>
+	    <script src="search_list.js"></script>
+	</head>
+	<body style="margin:0 20px">
+		<div id="tb">
+			<div id="tsh-title">
+				<h3><span class="t1">采购单查询列表</span></h3>
+				<div class="title-border"></div>
+			</div>
+			
+			<form class="tsh-toolbar" id="searchForm">
+	      		<label>
+	      			<span>采购单号：</span>
+	      			<input id="purchaseNo" name="purchaseNo" class="easyui-textbox" style="width:130px;height:30px;margin-right: 30px;" value=''/>
+	      		</label>
+	      		<label>
+	      			<span>状态：</span>
+	      			<input id="status" name="status" class="easyui-combobox" style="width:130px;height:30px;margin-right: 30px;"/>
+	      		</label>
+	      	    <label style="min-width:80px;">
+		     	     <a href="javascript:void(0);" class="btn btn-1" id="search"><i class="i-search"></i>搜索</a>&nbsp;
+		     	     <a href="javascript:void(0);" class="btn btn-1" id="clear">清空</a>&nbsp;
+		     	     <!-- <a class='btn btn-3' href='javascript:;' onclick="excelExport();"><i class='i-export'></i>导出Excel</a> -->
+			    </label>      	
+			</form>
+		</div>
+		<table id="grid" class="easyui-datagrid"></table>
+	</body>
+</html>

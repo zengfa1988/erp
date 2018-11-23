@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+		<title>查看付款单</title>
+		<link type="text/css" rel="stylesheet" href="../../static/js/easyui/themes/default/easyui.css" />
+    	<link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+		<script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../static/js/easyui/jquery.easyui.min.js"></script>
+	    <script src="../../static/js/jquery.easyui.extend.min.js"></script>
+    	<script src="../../static/js/webuploader-0.1.5/webuploader.nolog.min.js"></script>
+    	<script src="../../static/js/commom.js"></script>
+    	<script src="../../static/common/1.0.0/jsUtilTools.js"></script>
+    	<script src="../../../static/common/easyui.common.js?gversion=1.0.0"></script>
+    	<script src="view_payment.js?gversion=1.0.0"></script>
+		<style type="text/css">
+			.form td {
+      padding: 10px 0
+  }
+  #tsh-title .btn-4 {
+      position: absolute;
+      top: -5px;
+  }
+  .td_span {
+	text-align: right;
+	width: 130px;
+  }
+  ul#imagesList,#skuImg ul{ padding: 0; margin: 0}
+ul#imagesList li,#skuImg ul li{list-style: none; width: 120px;float: left;margin-right: 20px; text-align: center; position: relative;cursor: pointer;}
+#skuImg ul li{ margin-right: 0;}
+ul#imagesList li div.imagesList,#skuImg ul li div.imagesList{overflow: hidden; position: relative;width: 118px;height: 118px; position: relative;
+	display: block;float: left;border: 1px solid #dee3e6; border-radius: 10px;background: url(../../static/images/nopic.png) no-repeat; }
+  #skuImg ul li div.imagesList{border-radius: 0}
+ul#imagesList li img,#skuImg ul li img{ background: #fff;width: 118px;height: 118px;padding: 0;margin: 0; position: relative; z-index: 2;}
+ul#imagesList li a.thumbnail,#skuImg ul li a.thumbnail{ position: absolute;width: 118px;height: 118px;
+					display: block;float: left;  z-index: 2; top: 0; left: 0; z-index: 9}
+ul#imagesList li .btn{ margin-top: 10px;}
+ul#imagesList li a .webuploader-container ,#skuImg ul li a .webuploader-container{
+	border-color:none;
+}
+ul#imagesList li a .webuploader-pick label,#skuImg ul li a .webuploader-pick label{border-width: 0;}
+ul#imagesList li a .webuploader-pick,#skuImg ul li a .webuploader-pick {
+	width: 100%;
+	height: 100%;
+	border-width:0;
+	background: none;
+	background-image:none;
+	filter: none;
+}
+ul#imagesList li a .webuploader-pick-hover,#skuImg ul li a .webuploader-pick-hover {
+	background-image:none;
+	filter: none;
+}
+ul div.imgText{
+position: absolute; line-height: 18px; border-radius: 5px 5px 0 0; top: 50%;left: 0px; width: 100%; text-align: center;  z-index: 1;color: grey;
+}
+		</style>
+	</head>
+	<body style="margin:0 20px">
+		<div id="tsh-title">
+        	<h3>
+        		<span class="t1">查看付款单</span>
+        	</h3>
+       		<div class="title-border"></div>
+     	</div>
+     	
+     	<form method="post" class="form" id="addForm" enctype="multipart/form-data" style='font-size:14px'>
+     		<input type="hidden" name="id">
+     		<table style="width: 98%;">
+     			<tr>
+     				<td style="text-align:right"><span class="text-red">∗</span><span id="supplierNameLabel">请款类型</span>：</td>
+     				<td>
+     					<select id="paymentType" class="easyui-combobox" name="paymentType" data-options="required:true,editable:false,readonly:true" panelHeight="auto" style="width:270px; height:30px;">
+	                    	<option value="">请选择</option>
+		      				<option value="1">货款</option>
+		      				<option value="2">头程物流</option>
+		      				<option value="3">二程物流</option>
+		      				<option value="4">图片费</option>
+		      				<option value="5">商标支出</option>
+		      				<option value="6">办公支出</option>
+		      				<option value="7">团建支出</option>
+		      				<option value="8">出差费用支出</option>
+	                    </select>
+     				</td>
+     			</tr>
+     			<tr>
+     				<td style="text-align:right">采购单号：</td>
+     				<td>
+     					<input type="hidden" id="purchaseId" name="purchaseId">
+     					<input class="easyui-textbox" id="purchaseNo" name="purchaseNo" data-options="editable:false,readonly:true" style="width:300px; height:30px;"></input>
+     				</td>
+     			</tr>
+     			<tr>
+     				<td style="text-align:right">采购金额：</td>
+     				<td><span id="purchaseFee"></span></td>
+     			</tr>
+     			<tr>
+     				<td style="text-align:right"><span class="text-red">∗</span>申请金额：</td>
+     				<td>
+     					<input class="easyui-numberbox" id="paymentFee" name="paymentFee" style="width:300px; height:30px;" data-options="required:true,min:0,precision:2,readonly:true"></input>
+     				</td>
+     			</tr>
+     			<tr>
+     				<td style="text-align:right">备注：</td>
+     				<td>
+     					<input class="easyui-textbox" id="memo" name="memo" data-options="multiline:true,readonly:true" style="width:500px; height:80px;"></input>
+     				</td>
+     			</tr>
+     			
+     			<tr>
+     				<td colspan="4" align="center">
+     					<a href="javascript:void(0);" style="margin-left:20px" class="btn btn-default" onclick="window.history.back(0);">取消</a>
+     				</td>
+     			</tr>
+     		</table>
+     		<div id="dialog" style="display:none;"></div>
+     	</form>
+	</body>
+</html>
